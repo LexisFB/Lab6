@@ -14,7 +14,7 @@ export class Read extends React.Component {
             .then((response) => {  //Once the response comes back does the next function..
                 this.setState({ books: response.data.mybooks }) //Saves the data in the books var using the setState function.
             })
-            .catch((error)=>{ // 3 status calls, Pending, Rejected,
+            .catch((error)=>{ // 3 status calls, Pending, Rejected, Fulfilled 
                 console.log("error");
             })
     }
