@@ -4,16 +4,17 @@ import { Books } from './books';
 import CardGroup from 'react-bootstrap/CardGroup';
 import axios from 'axios';  //Is the https client 
 
+// A callback is a function passed as an argument to another function.!!!!
 
 export class Read extends React.Component {
 
     componentDidMount() { // (lifecycle method) method runs after the component output has been rendered to the DOM.
 
-        axios.get("http://localhost:4000/api/books")
-            .then((response) => {  //Gets the reponse from the link above and retrieves the data.
+        axios.get("http://localhost:4000/api/books") //axios does the promise and retrieves the data asyc.
+            .then((response) => {  //Once the response comes back does the next function..
                 this.setState({ books: response.data.mybooks }) //Saves the data in the books var using the setState function.
             })
-            .catch((error)=>{
+            .catch((error)=>{ // 3 status calls, Pending, Rejected,
                 console.log("error");
             })
     }
